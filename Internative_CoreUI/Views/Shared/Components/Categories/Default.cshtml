@@ -1,0 +1,26 @@
+﻿@using Internative_Entity.Concrete
+@model List<Category>
+<!-- Recipes Categories
+   ======================= -->
+<section id="categories">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Categories</h2>
+            </div>
+        </div>
+        <div class="row wow zoomIn">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <div class="category-item text-center">
+                        <img src="~/recipe/images/icons/milk.png" alt="milk" width="48" height="48" />
+                        <br />
+                        @item.CategoryName
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>

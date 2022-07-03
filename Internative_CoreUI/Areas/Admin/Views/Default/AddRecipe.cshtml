@@ -1,0 +1,42 @@
+﻿
+@model Internative_Entity.Concrete.Category
+@{
+    ViewData["Title"] = "AddRecipe";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("Default", "AddRecipe", FormMethod.Post))
+{
+    
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Tarif Ekleme Sayfası</h1>
+                        </div><!-- /.col -->
+
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <form class="form-group" method="post">
+                <br />
+                @Html.Label("Yemeğin Adı")
+                <input type="text" name="FoodName" class="form-control" />
+                <br />
+                <label>Yemeğin Tarifi</label>
+                <br />
+                <input type="text" name="FoodRecipe" class="form-control" />
+                <br />
+                @Html.Label("Yemeğin Kategorisi")
+                <br />
+                @Html.DropDownListFor(model => model.CategoryID, (List<SelectListItem>)ViewBag.vc, "Kategori Seçiniz", new { @class = "form-control" })
+                <br />
+                <button class="btn btn-primary">Kaydet</button>
+            </form>
+        </div>
+    </div>
+}
+
